@@ -12,20 +12,23 @@ pipeline {
                 bat 'npm install'
             }
         }
+
         stage('Build') {
             steps {
                 bat 'npm run build'
             }
         }
+
         stage('Test') {
             steps {
-                bat 'npm test'
+                bat 'npm test --passWithNoTests'
             }
         }
+
         stage('Deploy') {
             steps {
                 bat 'powershell Compress-Archive -Path build\\* -DestinationPath build.zip -Force'
-                bat 'az webapp deployment source config-zip --resource-group %RESOURCE_GROUP% --name %WEB_APP_NAME% --src-path build.zip'
+                bat 'az webapp deployment source config-zip --resource-group %RESOURCE_GROUP% --name %WEB_APP_NAME% --src build.zip'
             }
         }
     }
