@@ -1,9 +1,11 @@
 pipeline {
     agent any
+
     environment {
         RESOURCE_GROUP = credentials('RESOURCE_GROUP')
         WEB_APP_NAME = credentials('WEB_APP_NAME')
     }
+
     stages {
         stage('Install') {
             steps {
