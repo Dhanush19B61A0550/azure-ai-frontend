@@ -39,7 +39,7 @@ const ContactsDetails = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://52.191.128.216:8085/apis/employees/contacts/contacts/${contactId}`,{
+                const response = await axios.get(`https://backend-aa.azurewebsites.net/apis/employees/contacts/contacts/${contactId}`,{
                     headers: {
                       "Authorization": `Bearer ${token}`  // Add the token to the Authorization header
                     }
@@ -63,7 +63,7 @@ const ContactsDetails = () => {
     };
 
     const deleteContact = async () => {
-        await axios.delete(`http://52.191.128.216:8085/apis/employees/contacts/contacts/${contactId}`,{
+        await axios.delete(`https://backend-aa.azurewebsites.net/employees/contacts/contacts/${contactId}`,{
             headers: {
               "Authorization": `Bearer ${token}`  // Add the token to the Authorization header
             }

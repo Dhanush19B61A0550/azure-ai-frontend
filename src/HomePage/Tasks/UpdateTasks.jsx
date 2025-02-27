@@ -28,7 +28,7 @@ export default function UpdateTasks(props) {
 
       if(taskName!=="" && taskDetails!==""){
         setIsError(false)
-        await axios.put(`http://52.191.128.216:8085/apis/employees/tasks/${taskId}`, {
+        await axios.put(`https://backend-aa.azurewebsites.net/apis/employees/tasks/${taskId}`, {
         taskId:taskId,
         taskAssignedBy:localStorage.getItem('email'),
         personName:personName,

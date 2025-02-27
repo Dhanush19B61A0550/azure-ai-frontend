@@ -31,10 +31,10 @@ const EmployeeHomePage = ({ submissions, setSubmissions }) => {
 
     const fetchSubmissions = async () => {
       try {
-        let url = `http://52.191.128.216:8085/api/timesheets/list/${employeeId}`;
+        let url = `https://backend-aa.azurewebsites.net/api/timesheets/list/${employeeId}`;
 
         if (startDate && endDate) {
-          url = `http://52.191.128.216:8085/api/timesheets/totalList/employeeId/${employeeId}/startDate/${startDate}/endDate/${endDate}`;
+          url = `https://backend-aa.azurewebsites.net/api/timesheets/totalList/employeeId/${employeeId}/startDate/${startDate}/endDate/${endDate}`;
         }
 
         const response = await axios.get(url, {
@@ -65,7 +65,7 @@ const EmployeeHomePage = ({ submissions, setSubmissions }) => {
 
   const handleDeleteTimesheet = async () => {
     try {
-      await axios.delete(`http://52.191.128.216:8085/api/timesheets/delete/${selectedSubmissionId}`, {
+      await axios.delete(`https://backend-aa.azurewebsites.net/api/timesheets/delete/${selectedSubmissionId}`, {
         headers: {
           "Authorization": `Bearer ${token}`
         }

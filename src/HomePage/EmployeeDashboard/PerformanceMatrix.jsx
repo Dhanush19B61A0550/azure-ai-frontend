@@ -15,7 +15,7 @@ const Performance = () => {
         const fetchData = async () => {
             const employeeId=localStorage.getItem('employeeId');
           try {
-            const response = await axios.get(`http://52.191.128.216:8085/apis/employees/TasksDetails/PersonId/${employeeId}`, {
+            const response = await axios.get(`https://backend-aa.azurewebsites.net/apis/employees/TasksDetails/PersonId/${employeeId}`, {
                 headers: {
                   "Authorization": `Bearer ${token}`  // Add the token to the Authorization header
                 }});

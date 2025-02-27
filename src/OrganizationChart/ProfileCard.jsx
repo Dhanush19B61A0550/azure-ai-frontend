@@ -11,7 +11,7 @@ export default function ProfileCard({ employeeId ,employee}) {
         try {
           const token = localStorage.getItem('token')
           console.log(token)
-          const response = await axios.get(`http://52.191.128.216:8085/api/v1/employeeManager/getEmployee/${employeeId}`,{
+          const response = await axios.get(`https://backend-aa.azurewebsites.net/api/v1/employeeManager/getEmployee/${employeeId}`,{
             method:'GET',
             headers : {
               'Authorization' : `Bearer ${token}`,
