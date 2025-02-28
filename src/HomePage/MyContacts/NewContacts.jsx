@@ -41,7 +41,7 @@ const NewContacts = () => {
         if(formData.personName!=="" && formData.personMobile!==""){
             setIsError(false);
             setIsAdding(true);
-        await axios.post("http://52.191.128.216:8085/apis/employees/contacts/contacts", formData,{
+        await axios.post("https://backend-aa.azurewebsites.net/apis/employees/contacts/contacts", formData,{
             headers: {
               "Authorization": `Bearer ${token}`  // Add the token to the Authorization header
             }

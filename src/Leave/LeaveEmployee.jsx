@@ -37,7 +37,7 @@ export default function LeaveEmployee() {
       try {
         const token = localStorage.getItem('token')
         console.log(token)
-        const response = await axios.get(`http://52.191.128.216:8085/api/leaves/employee/${employeeId}`, {
+        const response = await axios.get(`https://backend-aa.azurewebsites.net/api/leaves/employee/${employeeId}`, {
           headers:{
             'Authorization' : `Bearer ${token}`,
           }
@@ -156,7 +156,7 @@ export default function LeaveEmployee() {
     const employeeId= localStorage.getItem('employeeId');
     try {
       const token = localStorage.getItem('token')
-      const response = await axios.get(`http://52.191.128.216:8085/api/leaves/employee/${employeeId}`, {
+      const response = await axios.get(`https://backend-aa.azurewebsites.net/api/leaves/employee/${employeeId}`, {
         method:'GET',
         headers:{
           'Authorization' : `Bearer ${token}`,
@@ -195,7 +195,7 @@ export default function LeaveEmployee() {
     try {
       // Proceed with deletion
       const token = localStorage.getItem('token')
-      await axios.delete(`http://52.191.128.216:8085/api/leaves/delete/${deleteRequestId}`, {
+      await axios.delete(`https://backend-aa.azurewebsites.net/api/leaves/delete/${deleteRequestId}`, {
         method:'GET',
         headers:{
           'Authorization' : `Bearer ${token}`,
@@ -204,7 +204,7 @@ export default function LeaveEmployee() {
       });
       try {
         const token = localStorage.getItem('token')
-        const response = await axios.get(`http://52.191.128.216:8085/api/leaves/employee/${employeeId}`, {
+        const response = await axios.get(`https://backend-aa.azurewebsites.net/api/leaves/employee/${employeeId}`, {
           method:'GET',
           headers:{
             'Authorization' : `Bearer ${token}`,

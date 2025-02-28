@@ -20,7 +20,7 @@ const MyTasks = props => {
     const fetchData = async () => {
 
       try {
-        const response = await axios.get(`http://52.191.128.216:8085/apis/employees/tasksAssignedTo/${employeeId}`,{
+        const response = await axios.get(`https://backend-aa.azurewebsites.net/apis/employees/tasksAssignedTo/${employeeId}`,{
           headers: {
             "Authorization": `Bearer ${token}`  // Add the token to the Authorization header
           }
@@ -62,13 +62,13 @@ const MyTasks = props => {
     let url;
 
     if (event.target.value === "allTasks") {
-      url = `http://52.191.128.216:8085/apis/employees/tasksAssignedTo/${employeeId}`;
+      url = `https://backend-aa.azurewebsites.net/apis/employees/tasksAssignedTo/${employeeId}`;
     } else if (event.target.value === "overdueTasks") {
-      url = `http://52.191.128.216:8085/apis/employees/OverdueTasks/PersonId/${employeeId}`;
+      url = `https://backend-aa.azurewebsites.net/apis/employees/OverdueTasks/PersonId/${employeeId}`;
     } else if (event.target.value === "pendingTasks") {
-      url = `http://52.191.128.216:8085/apis/employees/PendingTasks/PersonId/${employeeId}`;
+      url = `https://backend-aa.azurewebsites.net/apis/employees/PendingTasks/PersonId/${employeeId}`;
     } else if (event.target.value === "completedTasks") {
-      url = `http://52.191.128.216:8085/apis/employees/CompletedTasks/PersonId/${employeeId}`;
+      url = `https://backend-aa.azurewebsites.net/apis/employees/CompletedTasks/PersonId/${employeeId}`;
     }
 
     try {

@@ -84,7 +84,7 @@ const OtherEmployeesList=props=>{
   const submitBadge=async(e)=>{
     setLoading(true);
     e.preventDefault();
-    await axios.post("http://52.191.128.216:8085/apis/employees/badges/AddBadges", {
+    await axios.post("https://backend-aa.azurewebsites.net/apis/employees/badges/AddBadges", {
       assignedPersonEmail:localStorage.getItem("email"),
       personName:personToGiveBadge[0].name,
       personEmail:personToGiveBadge[0].email,
